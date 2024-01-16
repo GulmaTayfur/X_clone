@@ -1,5 +1,3 @@
-// tablet ekranalarına kadar
-
 @mixin xs {
   @media (max-width: 500px) {
     @content;

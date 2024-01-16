@@ -8,38 +8,27 @@ export const ele = {
   searchForm: document.querySelector("aside form"),
 };
 
-// kullanıcın bilgilerini ekrana basar
 export const renderUserInfo = (user) => {
-  // kullanıcı resimlerini ekrana bas
   ele.pics.forEach((img) => (img.src = user.avatar));
 
-  // kullanıcı isimlerini ekrana bas
   ele.user_name.innerText = user.name;
   ele.user_tag.innerText = "@" + user.profile;
 };
 
-// tweetin medya içeriğini alıcak ve içerğe göre html oluşturucak
 const getMedia = (media) => {
-  // media içeriği yoksa
   if (!media) return "";
-
-  // fotoğraf varsa
   if (media.photo) {
     return media.photo
       .map((img) => `<img src="${img.media_url_https}" />`)
       .join("");
   }
 
-  // video varsa
   if (media.video) {
     const url = media.video[0].variants[0].url;
     return `<video controls src="${url}"/>`;
   }
 };
 
-// tweetleri ekana basar
-// 1) data:tweet'ler
-// 2) outlet: hangi elementin içerisne göndericez
 export const renderTimeline = (data, outlet, user) => {
   console.log(data.timeline[1]);
   console.log(data);
@@ -47,7 +36,7 @@ export const renderTimeline = (data, outlet, user) => {
     console.error("Geçersiz veri veya eksik timeline özelliği");
     return;
   }
-  // her bir tweet için outlet'e bir tweet divi bas
+
   outlet.innerHTML = data.timeline
     .map(
       (tweet) => `
@@ -104,13 +93,11 @@ export const renderTimeline = (data, outlet, user) => {
     .join("");
 };
 
-// parametre olarak aldığı alana yükleniyor basar
 export const renderLoader = (outlet) => {
   outlet.innerHTML =
     '<div id="loader-wrapper"> <div aria-live="assertive" role="alert" class="loader"></div> </div>';
 };
 
-// detay sayfasının yükleniyorunu ekrana basar
 export const renderDetailLoader = (text) => {
   ele.main.innerHTML = `
   <div class="nav">
@@ -123,7 +110,6 @@ export const renderDetailLoader = (text) => {
   `;
 };
 
-// ekrana tweet detay sayfasını basar
 export const renderDetail = (tweet, user) => {
   ele.main.innerHTML = `
       <div class="nav">
@@ -191,7 +177,6 @@ export const renderDetail = (tweet, user) => {
   `;
 };
 
-// kullanıcı syafaını ekrana basar
 export const renderUser = (user) => {
   console.log(user);
   ele.main.innerHTML = `

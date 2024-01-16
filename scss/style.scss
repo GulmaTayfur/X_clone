@@ -43,7 +43,7 @@ button:hover {
   }
 }
 
-//* Sol Alan
+// Sol Alan
 nav {
   display: flex;
   flex-direction: column;
@@ -164,7 +164,7 @@ nav {
   }
 }
 
-//* Orta Alan
+// Orta Alan
 main {
   height: 100vh;
   border: 1px solid rgb(60, 60, 60);
@@ -262,7 +262,6 @@ main {
     width: 100%;
     margin-top: 10px;
 
-    // kullanıcı bilgisi
     .user {
       display: flex;
       justify-content: space-between;
@@ -304,7 +303,6 @@ main {
   }
 }
 
-// etkileim butonları
 .tweet .buttons {
   display: flex;
   justify-content: space-between;
@@ -344,7 +342,7 @@ main {
   }
 }
 
-//* Sağ Alan
+// Sağ Alan
 aside {
   padding: 20px;
   display: flex;
